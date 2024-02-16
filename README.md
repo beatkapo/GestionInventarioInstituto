@@ -28,3 +28,6 @@ ID: 2\ Fecha de compra: dd-mm-aaaa\ Precio: 0.0\ Tipo: PANTALLA\ Marca: marca\ M
 ### Eliminar dispositivos de la lista
 Obviamente tambien se puede eliminar cualquier dispositivo pulsando el botón de eliminar tras haber seleccionado un elemento.
 ![Gif animado de un ejemplo sobre como eliminar un dispositivo de la lista](https://github.com/beatkapo/GestionInventarioInstituto/blob/main/GestionInventarioInstituto/doc/img/eliminar.gif?raw=true)
+
+## Documentación
+Puedes revisar la documentación del código si descargas la carpeta [doc](https://github.com/beatkapo/GestionInventarioInstituto/tree/main/GestionInventarioInstituto/doc) y abres el archivo [index.html](https://github.com/beatkapo/GestionInventarioInstituto/blob/main/GestionInventarioInstituto/doc/index.html) que contiene.
