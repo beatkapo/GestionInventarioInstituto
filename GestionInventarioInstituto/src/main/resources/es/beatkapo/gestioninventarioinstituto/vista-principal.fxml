@@ -19,18 +19,15 @@
         <HBox prefHeight="21.0" prefWidth="515.0">
             <children>
                 <Label prefHeight="17.0" prefWidth="468.0" text="Inventario" />
-            <Button mnemonicParsing="false" style="-fx-background-color: transparent;">
+            <Button fx:id="printButton" mnemonicParsing="false" onAction="#print" style="-fx-background-color: transparent;">
                <graphic>
-                  <ImageView fitHeight="26.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="26.0" fitWidth="23.0" onMouseClicked="#print" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@print.png" />
                      </image>
                   </ImageView>
                </graphic>
             </Button>
-                <Button fx:id="printButton" mnemonicParsing="false" onAction="#print" prefHeight="25.0" prefWidth="47.0" style="-fx-background-color: transparent;">
-
-                </Button>
             </children>
         </HBox>
       <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">

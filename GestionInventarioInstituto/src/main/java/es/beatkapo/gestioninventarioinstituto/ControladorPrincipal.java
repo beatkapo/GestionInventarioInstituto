@@ -10,7 +10,11 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.stage.FileChooser;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.PrintWriter;
 import java.util.Date;
 
 public class ControladorPrincipal {
@@ -89,7 +93,11 @@ public class ControladorPrincipal {
 
     @FXML
     void eliminar(ActionEvent event) {
-
+        Dispositivo dispositivo = listView.getSelectionModel().getSelectedItem();
+        if(dispositivo != null){
+            inventario.getDispositivos().remove(dispositivo);
+            actualizarLista();
+        }
     }
 
     @FXML
@@ -142,7 +150,26 @@ public class ControladorPrincipal {
 
     @FXML
     void print(ActionEvent event) {
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("Plain text", "*.txt"));
+        fileChooser.setInitialFileName("inventario.txt");
+        fileChooser.setTitle("Guardar inventario");
+        fileChooser.setInitialDirectory(new java.io.File(System.getProperty("user.home")));
+        inventario.setRutaImpresion(fileChooser.showSaveDialog(printButton.getScene().getWindow()).toPath());
+        File file = inventario.getRutaImpresion().toFile();
+        guardarArchivoTxt(file);
+    }
 
+    private void guardarArchivoTxt(File file) {
+        Date fecha = new Date();
+        inventario.setFecha(fecha);
+        try {
+            PrintWriter writer = new PrintWriter(file);
+            writer.println(inventario);
+            writer.close();
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        }
     }
 
 

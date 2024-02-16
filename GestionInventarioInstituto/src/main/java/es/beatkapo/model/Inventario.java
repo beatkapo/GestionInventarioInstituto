@@ -22,7 +22,11 @@ public class Inventario {
     public String toString() {
         SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
         String ordenacionString = "";
-        switch (ordenacion){
+        StringBuilder dispositivosString = new StringBuilder();
+        for (Dispositivo dispositivo : dispositivos) {
+            dispositivosString.append(dispositivo.toString()).append("\n");
+        }
+        switch (ordenacion) {
             case 0:
                 ordenacionString = "ID";
                 break;
@@ -42,16 +46,17 @@ public class Inventario {
                 ordenacionString = "Modelo";
                 break;
         }
-        return "Inventario del día " + sdf.format(fecha) +"\n" +
+        return "Inventario del día " + sdf.format(fecha) + "\n\n" +
 
-                "\tDispositivos ordenados por " +ordenacionString+":\n" + dispositivos;
+                "\tDispositivos ordenados por " + ordenacionString + ":\n" + dispositivosString.toString();
     }
-    public Inventario(){
+
+    public Inventario() {
         dispositivos = FXCollections.observableArrayList();
     }
 
     public void ordenar() {
-        switch (ordenacion){
+        switch (ordenacion) {
             case 0:
                 dispositivos.sort((d1, d2) -> d1.getId() - d2.getId());
                 break;
