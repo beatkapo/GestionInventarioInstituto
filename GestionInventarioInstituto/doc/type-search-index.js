@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"es.beatkapo.gestioninventarioinstituto","l":"App"},{"p":"es.beatkapo.gestioninventarioinstituto","l":"ControladorPrincipal"},{"p":"es.beatkapo.model","l":"Dispositivo"},{"p":"es.beatkapo.model","l":"Inventario"},{"p":"es.beatkapo.model","l":"Tipo"}];updateSearchResults();

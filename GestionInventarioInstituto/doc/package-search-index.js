@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"m":"es.beatkapo.gestioninventarioinstituto","l":"es.beatkapo.gestioninventarioinstituto"},{"m":"es.beatkapo.gestioninventarioinstituto","l":"es.beatkapo.model"}];updateSearchResults();
