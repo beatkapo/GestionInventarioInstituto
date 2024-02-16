@@ -17,42 +17,90 @@ import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 import java.util.Date;
 
+/**
+ * Clase que representa el controlador de la vista principal
+ * @version 1.0
+ * @since 1.0
+ * @author Fran Gabarda
+ * @see Dispositivo
+ * @see Inventario
+ * @see Tipo
+ */
 public class ControladorPrincipal {
-
+    /**
+     * ComboBox para seleccionar el tipo de dispositivo
+     */
     @FXML
     private ComboBox<Tipo> comboBox;
+    /**
+     * ComboBox para seleccionar el filtro de ordenación
+     */
     @FXML
     private ComboBox<String> filtro;
-
+    /**
+     * Botón para editar un dispositivo
+     */
     @FXML
     private Button editarButton;
-
+    /**
+     * Botón para eliminar un dispositivo
+     */
     @FXML
     private Button eliminarButton;
-
+    /**
+     * Botón para guardar un dispositivo
+     */
     @FXML
     private Button guardarButton;
-
+    /**
+     * ListView para mostrar los dispositivos
+     */
     @FXML
     private ListView<Dispositivo> listView;
-
+    /**
+     * TextField para introducir la marca del dispositivo
+     */
     @FXML
     private TextField marcaText;
-
+    /**
+     * TextField para introducir el modelo del dispositivo
+     */
     @FXML
     private TextField modeloText;
-
+    /**
+     * TextField para introducir el precio del dispositivo
+     */
     @FXML
     private TextField precioText;
+    /**
+     * Lista observable de dispositivos
+     */
     private ObservableList<Dispositivo> dispositivos;
+    /**
+     * Lista observable de tipos
+     */
     private ObservableList<Tipo> tipos;
+    /**
+     * Identificador del dispositivo seleccionado en la lista
+     */
     private int idSeleccionado;
+    /**
+     * Inventario
+     */
     private Inventario inventario;
-
+    /**
+     * Botón para imprimir el inventario en un archivo de texto
+     */
     @FXML
     private Button printButton;
-
+    /**
+     * Variable para saber si se está editando un dispositivo
+     */
     private boolean editando = false;
+
+    /**
+     * Método que se ejecuta al inicializar la vista
+     */
     public void initialize(){
         inventario = new Inventario();
         dispositivos = FXCollections.observableArrayList(inventario.getDispositivos());
@@ -72,12 +120,18 @@ public class ControladorPrincipal {
         actualizarLista();
     }
 
+    /**
+     * Método que actualiza la lista de dispositivos
+     */
     private void actualizarLista() {
         dispositivos = FXCollections.observableArrayList(inventario.getDispositivos());
         listView.setItems(dispositivos);
     }
 
-
+    /**
+     * Método que se ejecuta al pulsar el botón de editar
+     * @param event Evento que dispara el método
+     */
     @FXML
     void editar(ActionEvent event) {
         Dispositivo dispositivo = listView.getSelectionModel().getSelectedItem();
@@ -91,6 +145,10 @@ public class ControladorPrincipal {
         }
     }
 
+    /**
+     * Método que se ejecuta al pulsar el botón de eliminar
+     * @param event Evento que dispara el método
+     */
     @FXML
     void eliminar(ActionEvent event) {
         Dispositivo dispositivo = listView.getSelectionModel().getSelectedItem();
@@ -100,6 +158,10 @@ public class ControladorPrincipal {
         }
     }
 
+    /**
+     * Método que se ejecuta al pulsar el botón de guardar
+     * @param event Evento que dispara el método
+     */
     @FXML
     void guardar(ActionEvent event) {
         String error = "";
@@ -140,14 +202,10 @@ public class ControladorPrincipal {
         actualizarLista();
     }
 
-    private void mostrarAlerta(String title, String header, String content, Alert.AlertType alertType) {
-        Alert alert = new Alert(alertType);
-        alert.setTitle(title);
-        alert.setHeaderText(header);
-        alert.setContentText(content);
-        alert.showAndWait();
-    }
-
+    /**
+     * Método que se ejecuta al pulsar el botón de imprimir
+     * @param event Evento que dispara el método
+     */
     @FXML
     void print(ActionEvent event) {
         FileChooser fileChooser = new FileChooser();
@@ -163,7 +221,10 @@ public class ControladorPrincipal {
         File file = inventario.getRutaImpresion().toFile();
         guardarArchivoTxt(file);
     }
-
+    /**
+     * Método que guarda el inventario en un archivo de texto
+     * @param file Archivo en el que se guarda el inventario
+     */
     private void guardarArchivoTxt(File file) {
         Date fecha = new Date();
         inventario.setFecha(fecha);
@@ -176,5 +237,20 @@ public class ControladorPrincipal {
         }
     }
 
+    /**
+     * Método que muestra una alerta
+     *
+     * @param title     Título de la alerta
+     * @param header    Cabecera de la alerta
+     * @param content   Contenido de la alerta
+     * @param alertType Tipo de alerta
+     */
+    private void mostrarAlerta(String title, String header, String content, Alert.AlertType alertType) {
+        Alert alert = new Alert(alertType);
+        alert.setTitle(title);
+        alert.setHeaderText(header);
+        alert.setContentText(content);
+        alert.showAndWait();
+    }
 
 }

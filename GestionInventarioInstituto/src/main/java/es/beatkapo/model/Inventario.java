@@ -10,14 +10,39 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
+/**
+ * Clase que representa un inventario de dispositivos
+ * @version 1.0
+ * @since 1.0
+ * @author Fran Gabarda
+ * @see Dispositivo
+ * @see lombok
+ */
+
 @Data
 @AllArgsConstructor
 public class Inventario {
+    /**
+     * Lista de dispositivos
+     */
     private List<Dispositivo> dispositivos;
+    /**
+     * Tipo de ordenación, 0 para ID, 1 para fecha, 2 para precio, 3 para tipo, 4 para marca, 5 para modelo
+     */
     private int ordenacion;
+    /**
+     * Ruta de impresión
+     */
     private Path rutaImpresion;
+    /**
+     * Fecha del inventario
+     */
     private Date fecha;
 
+    /**
+     * Método que devuelve un string con la información del inventario
+     * @return String con la información del inventario
+     */
     @Override
     public String toString() {
         SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
@@ -51,10 +76,16 @@ public class Inventario {
                 "\tDispositivos ordenados por " + ordenacionString + ":\n" + dispositivosString.toString();
     }
 
+    /**
+     * Constructor por defecto
+     */
     public Inventario() {
         dispositivos = FXCollections.observableArrayList();
     }
 
+    /**
+     * Método que ordena la lista de dispositivos
+     */
     public void ordenar() {
         switch (ordenacion) {
             case 0:

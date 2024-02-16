@@ -8,7 +8,15 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
+/**
+ * Clase que representa la aplicación
+ */
 public class App extends Application {
+    /**
+     * Método que inicia la aplicación
+     * @param stage Escenario de la aplicación
+     * @throws IOException Excepción de entrada/salida de datos
+     */
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("vista-principal.fxml"));
@@ -20,6 +28,10 @@ public class App extends Application {
         stage.show();
     }
 
+    /**
+     * Método que lanza la aplicación
+     * @param args Argumentos de la aplicación (no se utilizan en este caso)
+     */
     public static void main(String[] args) {
         launch();
     }
