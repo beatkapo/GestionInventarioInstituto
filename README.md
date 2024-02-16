@@ -31,3 +31,6 @@ Obviamente tambien se puede eliminar cualquier dispositivo pulsando el botón de
 
 ## Documentación
 Puedes revisar la documentación del código si descargas la carpeta [doc](https://github.com/beatkapo/GestionInventarioInstituto/tree/main/GestionInventarioInstituto/doc) y abres el archivo [index.html](https://github.com/beatkapo/GestionInventarioInstituto/blob/main/GestionInventarioInstituto/doc/index.html) que contiene.
+## Enlaces de interés
+Si te ha parecido interesante, podrias visitar los siguientes enlaces:
+- [DressMakerApp](https://github.com/beatkapo/DressMakerApp) es una aplicación Android para gestionar los clientes y las tareas de costurería
