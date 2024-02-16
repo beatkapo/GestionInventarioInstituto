@@ -189,6 +189,7 @@ public class ControladorPrincipal {
             dispositivo.setTipo((es.beatkapo.model.Tipo) comboBox.getValue());
             if(editando){
                 inventario.getDispositivos().removeIf(d -> d.getId() == idSeleccionado);
+                dispositivo.setId(idSeleccionado);
                 editando = false;
             }else{
                 dispositivo.setId(inventario.getDispositivos().size());
