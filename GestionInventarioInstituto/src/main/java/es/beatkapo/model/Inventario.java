@@ -109,6 +109,10 @@ public class Inventario {
         }
     }
 
+    /**
+     * Método que añade un dispositivo a la lista
+     * @param dispositivo
+     */
     public void addDispositivo(Dispositivo dispositivo) {
         dispositivos.add(dispositivo);
     }
