@@ -1,5 +1,7 @@
 # GestionInventarioInstituto
 Aplicación para la gestión de inventario de un instituto.
+## Autor
+Fran Gabarda alias [beatkapo](https://github.com/beatkapo/)
 ## ¿Cómo funciona?
 Es una aplicación muy sencilla, no será muy dificil entendera siguiendo los diferentes apartados.
 ### Guardar un dispositivo en la lista
