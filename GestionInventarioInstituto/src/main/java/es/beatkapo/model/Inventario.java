@@ -108,4 +108,8 @@ public class Inventario {
                 break;
         }
     }
+
+    public void addDispositivo(Dispositivo dispositivo) {
+        dispositivos.add(dispositivo);
+    }
 }
