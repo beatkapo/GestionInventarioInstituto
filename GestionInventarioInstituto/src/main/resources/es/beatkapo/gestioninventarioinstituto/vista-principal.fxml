@@ -33,6 +33,13 @@
                 </Button>
             </children>
         </HBox>
+      <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
+         <children>
+            <Label text="Filtrar por: " />
+            <ComboBox fx:id="filtro" prefHeight="25.0" prefWidth="172.0" promptText="Seleccionar" />
+         </children>
+      </HBox>
+        
         <HBox prefHeight="155.0" prefWidth="337.0">
             <children>
                 <ListView fx:id="listView" prefHeight="155.0" prefWidth="295.0" />
