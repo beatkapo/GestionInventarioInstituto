@@ -36,4 +36,4 @@ Puedes revisar la documentación del código si descargas la carpeta [doc](https
 ## Enlaces de interés
 Si te ha parecido interesante, podrias visitar los siguientes enlaces:
 - [DressMakerApp](https://github.com/beatkapo/DressMakerApp) es una aplicación Android para gestionar los clientes y las tareas de costurería
-- [EustaquioBot](https://github.com/beatkapo/EustaquioBot) es un bot para discord, que ayuda a mantener la gestión de empleados de un rancho virtual.
+- [EustaquioBot](https://github.com/beatkapo/EustaquioBot) es un bot de Discord, que ayuda a mantener la gestión de empleados de un rancho virtual.
