@@ -155,7 +155,11 @@ public class ControladorPrincipal {
         fileChooser.setInitialFileName("inventario.txt");
         fileChooser.setTitle("Guardar inventario");
         fileChooser.setInitialDirectory(new java.io.File(System.getProperty("user.home")));
-        inventario.setRutaImpresion(fileChooser.showSaveDialog(printButton.getScene().getWindow()).toPath());
+        try{
+            inventario.setRutaImpresion(fileChooser.showSaveDialog(printButton.getScene().getWindow()).toPath());
+        }catch (Exception e) {
+            System.err.println("Error al guardar el archivo de impresión.");
+        }
         File file = inventario.getRutaImpresion().toFile();
         guardarArchivoTxt(file);
     }
